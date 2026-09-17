@@ -26,9 +26,7 @@ function Footer() {
     <footer className="border-t border-line bg-surface-strong">
       <div className="mx-auto flex max-w-screen-2xl flex-col gap-5 px-5 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-left lg:px-12 xl:px-20">
         <div>
-          <p className="text-base font-semibold text-ink">
-            Studio<span className="text-accent">P</span>
-          </p>
+          <p className="text-2xl font-black italic leading-none text-accent">P</p>
           <p className="mt-1 text-xs text-muted">Built with React &amp; Tailwind CSS</p>
         </div>
 

@@ -27,8 +27,7 @@ function Experience() {
     <main className="min-h-screen bg-canvas pb-10 pt-24 sm:pt-28 lg:pt-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
         <header className="max-w-xl">
-          <p className="text-xs font-semibold tracking-[0.22em] text-accent">STUDIOP</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             MY EXPERIENCE
           </h1>
           <p className="mt-2 text-sm text-muted sm:text-base">

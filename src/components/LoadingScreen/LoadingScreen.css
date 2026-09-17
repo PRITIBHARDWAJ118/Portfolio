@@ -1,7 +1,3 @@
-.loading-screen__loader {
-  --progress: 0deg;
-}
-
 @property --progress {
   syntax: "<angle>";
   inherits: false;
@@ -15,113 +11,102 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background: #F9F0E0;
+  color: #252321;
   opacity: 1;
-  transition: opacity 420ms ease, visibility 420ms ease;
+  transition: opacity 320ms ease, visibility 320ms ease;
 }
 
 .loading-screen--exiting {
-  visibility: hidden;
   opacity: 0;
 }
 
 .loading-screen__ambient {
   position: absolute;
-  width: min(76vw, 52rem);
+  width: min(70vw, 38rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 13%, transparent), transparent 67%);
-  filter: blur(16px);
-  opacity: 0.8;
-  transform: translateY(-2%);
+  background: radial-gradient(circle, color-mix(in srgb, #CC3A63 9%, transparent), transparent 68%);
+  filter: blur(18px);
 }
 
 .loading-screen__content {
   position: relative;
   display: grid;
-  justify-items: center;
-  gap: 1.5rem;
+  place-items: center;
+  min-height: 10rem;
   padding: 1.5rem;
 }
 
+.loading-screen__greeting {
+  margin: 0;
+  color: #252321;
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  text-align: center;
+  animation: loading-screen-enter 320ms ease both;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
 .loading-screen__loader {
+  --progress: 0deg;
   display: grid;
-  width: clamp(9rem, 24vw, 12.5rem);
+  width: clamp(8rem, 20vw, 10.5rem);
   aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
-  background: conic-gradient(var(--color-accent) var(--progress), color-mix(in srgb, var(--color-accent) 14%, transparent) 0);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 24%, transparent), 0 0 2.5rem color-mix(in srgb, var(--color-accent) 24%, transparent);
-  transition: --progress 230ms linear, box-shadow 230ms ease;
-}
-
-.loading-screen__loader::before {
-  width: 88%;
-  aspect-ratio: 1;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
-  border-top-color: var(--color-accent);
-  border-radius: 50%;
-  content: "";
-  animation: loading-screen-spin 2.4s linear infinite;
+  background: conic-gradient(#CC3A63 var(--progress), color-mix(in srgb, #CC3A63 13%, transparent) 0);
+  box-shadow: 0 0 0 1px color-mix(in srgb, #CC3A63 20%, transparent), 0 1rem 2.5rem color-mix(in srgb, #CC3A63 13%, transparent);
+  transition: --progress 80ms linear, opacity 320ms ease, transform 320ms ease;
 }
 
 .loading-screen__loader-core {
-  position: absolute;
   display: grid;
-  width: 76%;
+  width: 88%;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid var(--color-line);
   border-radius: 50%;
-  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-  box-shadow: inset 0 0 1.5rem color-mix(in srgb, var(--color-accent) 6%, transparent);
+  background: #F9F0E0;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, #CC3A63 16%, transparent);
 }
 
 .loading-screen__percentage {
-  font-size: clamp(1.75rem, 5vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
-}
-
-.loading-screen__message {
-  min-height: 1.5em;
-  margin: 0;
-  color: var(--color-muted);
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
-  font-style: italic;
+  color: #252321;
+  font-size: clamp(1.45rem, 4vw, 2rem);
   font-weight: 500;
-  animation: loading-screen-message 360ms ease both;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
 }
 
-@keyframes loading-screen-spin {
-  to {
-    transform: rotate(360deg);
-  }
+.loading-screen__greeting.is-leaving,
+.loading-screen__loader.is-leaving {
+  opacity: 0;
+  transform: translateY(-0.5rem) scale(0.98);
 }
 
-@keyframes loading-screen-message {
+@keyframes loading-screen-enter {
   from {
     opacity: 0;
-    transform: scale(0.94) translateY(0.2rem);
+    transform: translateY(0.5rem);
   }
 
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .loading-screen,
+  .loading-screen__greeting,
   .loading-screen__loader {
     transition-duration: 1ms;
   }
 
-  .loading-screen__loader::before,
-  .loading-screen__message {
+  .loading-screen__greeting {
     animation: none;
   }
 }

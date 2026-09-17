@@ -1,27 +1,14 @@
-function AchievementCard({
-  title,
-  subtitle,
-  secondaryText,
-  icon: Icon,
-  iconClass,
-  hoverClass,
-}) {
+function AchievementCard({ title, description, category, icon: Icon }) {
   return (
     <article
-      className={`group flex min-h-36 items-start gap-4 rounded-md border border-line bg-surface p-5 shadow-lg shadow-ink/10 transition duration-300 hover:-translate-y-1 hover:bg-surface-strong ${hoverClass}`}
+      className="group relative flex min-h-52 flex-col overflow-hidden rounded-2xl border border-[#A2AB73]/30 bg-[#FFF9F0] p-6 shadow-[0_12px_28px_rgba(91,65,60,0.10)] transition duration-300 hover:-translate-y-1 hover:border-[#CC3A63]/45 hover:shadow-[0_18px_36px_rgba(204,58,99,0.16)]"
     >
-      <div className="flex size-11 shrink-0 items-center justify-center rounded-md border border-line bg-canvas/40">
-        <Icon aria-hidden="true" className={`size-5 ${iconClass}`} />
+      <div className="flex size-10 items-center justify-center rounded-full border border-[#CC3A63]/20 bg-[#CC3A63]/8 text-[#CC3A63]" aria-hidden="true">
+        <Icon className="size-4" />
       </div>
-      <div className="min-w-0">
-        <h3 className="text-base font-semibold text-ink">{title}</h3>
-        <p className="mt-1 text-sm leading-5 text-muted">{subtitle}</p>
-        {secondaryText && (
-          <p className="mt-2 text-xs font-medium tracking-wide text-subtle">
-            {secondaryText}
-          </p>
-        )}
-      </div>
+      <p className="mt-5 text-xs font-bold tracking-[0.18em] text-[#A2AB73]">{category}</p>
+      <h3 className="mt-2 text-xl font-semibold tracking-tight text-[#252321]">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-[#5A5260] italic">{description}</p>
     </article>
   );
 }

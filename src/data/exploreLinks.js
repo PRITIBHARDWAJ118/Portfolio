@@ -44,11 +44,4 @@ export const exploreLinks = [
     path: "/resume",
     overlay: "from-emerald-950/85 via-ink/45 to-ink/80",
   },
-  {
-    title: "Contact Me",
-    subtitle: "Let's connect",
-    image: heroImage,
-    path: "/contact",
-    overlay: "from-accent-dark/85 via-ink/45 to-ink/80",
-  },
 ];

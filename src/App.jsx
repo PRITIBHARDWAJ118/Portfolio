@@ -13,7 +13,6 @@ import Experience from "./pages/Experience.jsx";
 import Skills from "./pages/Skills.jsx";
 import Hobbies from "./pages/Hobbies.jsx";
 import Resume from "./pages/Resume.jsx";
-import Contact from "./pages/Contact.jsx";
 import Activities from "./pages/Activities.jsx";
 import { useState } from "react";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen.jsx";
@@ -35,7 +34,6 @@ function App() {
           <Route path="/hobbies" element={<Hobbies />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
       {isIntroVisible && <LoadingScreen onComplete={() => setIsIntroVisible(false)} />}

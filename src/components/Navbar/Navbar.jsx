@@ -20,14 +20,11 @@ function Navbar() {
       >
         <NavLink
           to="/"
-          className="group flex shrink-0 items-center gap-2 lg:mr-5 xl:mr-7"
-          aria-label="StudioP home"
+          className="group shrink-0 lg:mr-5 xl:mr-7"
+          aria-label="Priti home"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent text-2xl font-black italic leading-none text-white shadow-lg shadow-accent-dark/50 transition duration-300 group-hover:scale-110 group-hover:bg-accent-dark">
+          <span className="block text-3xl font-black italic leading-none text-[#CC3A63] transition duration-300 group-hover:scale-110 group-hover:text-[#A92E50] lg:text-4xl">
             P
-          </span>
-          <span className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
-            Studio<span className="text-accent">P</span>
           </span>
         </NavLink>
 
@@ -65,6 +62,20 @@ function Navbar() {
             id="mobile-navigation"
             className="absolute inset-x-0 top-full border-b border-line bg-surface/95 px-4 py-4 shadow-2xl backdrop-blur-md lg:hidden"
           >
+            <div className="mb-3 flex items-center justify-between border-b border-line pb-3">
+              <div className="flex items-center gap-2.5">
+                <span className="text-3xl font-black italic leading-none text-[#CC3A63]">P</span>
+                <span className="text-sm font-semibold text-ink">Priti&apos;s portfolio</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex size-9 items-center justify-center rounded-md text-2xl leading-none text-muted transition hover:bg-surface-strong hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent"
+                aria-label="Close navigation menu"
+              >
+                ×
+              </button>
+            </div>
             <div className="flex flex-col gap-1">
               {navLinks.map(({ name, path }) => (
                 <NavLink

@@ -76,18 +76,12 @@ function AboutModal({ onClose }) {
           B.Tech <span aria-hidden="true">•</span> Electronics &amp; Telecommunication
         </p>
 
-        <div className="mt-7 grid gap-3 sm:grid-cols-2">
+        <div className="mt-7">
           <Link
             to="/resume"
             className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface"
           >
             View Resume
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-md border border-line px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/50 hover:bg-surface-strong/70 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface"
-          >
-            Contact Me
           </Link>
         </div>
       </div>

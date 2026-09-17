@@ -1,26 +1,34 @@
-import { FaLaptopCode, FaMedal, FaTrophy } from "react-icons/fa6";
+import { FaLaptopCode, FaLightbulb, FaMedal, FaTrophy } from "react-icons/fa6";
 
 export const achievements = [
   {
+    id: "pbl-second-prize",
     title: "PBL — 2nd Prize",
-    subtitle: "Crop Disease Detection on Edge • Industry Conclave",
+    description:
+      'Got 2nd prize for our project "Crop Disease Detection at Edge" during the Industry Conclave.',
+    category: "PBL",
     icon: FaTrophy,
-    iconClass: "text-amber-300",
-    hoverClass: "hover:border-amber-300/35 hover:shadow-amber-400/15",
   },
   {
-    title: "Merit Scholarship",
-    subtitle: "Top 4 of the Batch • 4 Consecutive Semesters",
+    id: "college-merit-scholarship",
+    title: "College Merit Scholarship",
+    description:
+      "Awarded the College Merit Scholarship for ranking in the Top 4 of the batch for four consecutive semesters.",
+    category: "Merit",
     icon: FaMedal,
-    iconClass: "text-sky-300",
-    hoverClass: "hover:border-sky-300/35 hover:shadow-sky-400/15",
   },
   {
-    title: "Smart India Hackathon",
-    subtitle: "Top 50 of 150 Teams • College Level",
-    secondaryText: "SIH 2024 & 2025",
+    id: "sih-2025-2024",
+    title: "SIH 2025 & 2024",
+    description: "Was in the top 50 team out of 150 to get selected at the college level.",
+    category: "Smart India Hackathon",
     icon: FaLaptopCode,
-    iconClass: "text-accent",
-    hoverClass: "hover:border-accent/35 hover:shadow-accent/15",
+  },
+  {
+    id: "crop-disease-detection-patent",
+    title: "Project Under Patent",
+    description: "My Crop Disease Detection using Edge Computing project is currently under patent.",
+    category: "Project",
+    icon: FaLightbulb,
   },
 ];
