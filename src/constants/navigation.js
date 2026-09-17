@@ -24,6 +24,10 @@ export const navLinks = [
     path: "/hobbies",
   },
   {
+    name: "Activities",
+    path: "/activities",
+  },
+  {
     name: "Resume",
     path: "/resume",
   },

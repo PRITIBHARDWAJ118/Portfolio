@@ -1,0 +1,127 @@
+.loading-screen__loader {
+  --progress: 0deg;
+}
+
+@property --progress {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  opacity: 1;
+  transition: opacity 420ms ease, visibility 420ms ease;
+}
+
+.loading-screen--exiting {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.loading-screen__ambient {
+  position: absolute;
+  width: min(76vw, 52rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 13%, transparent), transparent 67%);
+  filter: blur(16px);
+  opacity: 0.8;
+  transform: translateY(-2%);
+}
+
+.loading-screen__content {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.loading-screen__loader {
+  display: grid;
+  width: clamp(9rem, 24vw, 12.5rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-accent) var(--progress), color-mix(in srgb, var(--color-accent) 14%, transparent) 0);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 24%, transparent), 0 0 2.5rem color-mix(in srgb, var(--color-accent) 24%, transparent);
+  transition: --progress 230ms linear, box-shadow 230ms ease;
+}
+
+.loading-screen__loader::before {
+  width: 88%;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  content: "";
+  animation: loading-screen-spin 2.4s linear infinite;
+}
+
+.loading-screen__loader-core {
+  position: absolute;
+  display: grid;
+  width: 76%;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  box-shadow: inset 0 0 1.5rem color-mix(in srgb, var(--color-accent) 6%, transparent);
+}
+
+.loading-screen__percentage {
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.loading-screen__message {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-style: italic;
+  font-weight: 500;
+  animation: loading-screen-message 360ms ease both;
+}
+
+@keyframes loading-screen-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-screen-message {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(0.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen,
+  .loading-screen__loader {
+    transition-duration: 1ms;
+  }
+
+  .loading-screen__loader::before,
+  .loading-screen__message {
+    animation: none;
+  }
+}

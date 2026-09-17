@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --color-canvas: #F9F0E0;
+  --color-surface: #FFF9F0;
+  --color-surface-strong: #F1E4D5;
+  --color-ink: #171717;
+  --color-muted: #5A5260;
+  --color-subtle: #847A83;
+  --color-line: #E3D1D1;
+  --color-accent: #CC3A63;
+  --color-accent-dark: #A92E50;
+  --color-accent-light: #DE6C89;
+}
+
+@keyframes signature-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-14px) scale(1.025);
+  }
+}
+
+@keyframes signature-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes about-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes about-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

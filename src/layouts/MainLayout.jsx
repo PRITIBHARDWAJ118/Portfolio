@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 function MainLayout() {
   return (
-    <div className="bg-black min-h-screen text-white">
-      <h1 className="text-3xl p-5 bg-red-600">MAIN LAYOUT</h1>
-
+    <div className="min-h-screen bg-canvas text-ink">
+      <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 }

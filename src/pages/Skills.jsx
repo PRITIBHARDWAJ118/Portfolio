@@ -1,6 +1,6 @@
 function Skills() {
   return (
-    <div className="text-white text-5xl pt-40 text-center">
+    <div className="text-ink text-5xl pt-40 text-center">
       Skills Page
     </div>
   );

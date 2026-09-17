@@ -1,0 +1,61 @@
+import heroImage from "../assets/hero.png";
+
+export const projects = [
+  {
+    title: "Crop Disease Detection on Edge",
+    tech: "YOLOv8 | Computer Vision | Edge AI",
+    technologies: ["YOLOv8", "Computer Vision", "Edge AI"],
+    description:
+      "An AI-powered crop disease detection system designed for edge deployment, enabling fast and practical disease identification from crop images.",
+    image: heroImage,
+    path: "/projects",
+    overlay: "from-emerald-950/85 via-ink/45 to-ink/85",
+    featured: true,
+    isPrimary: true,
+  },
+  {
+    title: "StudioP",
+    tech: "React | Tailwind CSS",
+    technologies: ["React", "Tailwind CSS"],
+    description: "A cinematic developer portfolio for presenting projects, skills and professional work.",
+    image: heroImage,
+    path: "/projects",
+    overlay: "from-accent-dark/85 via-ink/45 to-ink/85",
+    featured: true,
+  },
+  {
+    title: "Simon Plays Game",
+    tech: "JavaScript | HTML | CSS",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    description: "A browser-based memory game inspired by the classic Simon pattern challenge.",
+    image: heroImage,
+    path: "/projects",
+    overlay: "from-amber-950/85 via-ink/45 to-ink/85",
+    featured: true,
+  },
+  {
+    title: "Smart Aquarium",
+    tech: "IoT | ESP32 | Firebase",
+    technologies: ["IoT", "ESP32", "Firebase"],
+    description: "An IoT system for monitoring and managing aquarium conditions in real time.",
+    image: heroImage,
+    path: "/projects",
+    overlay: "from-cyan-950/85 via-ink/45 to-ink/85",
+    featured: true,
+  },
+  {
+    title: "FloodSense",
+    tech: "IoT | Firebase | Sensors",
+    technologies: ["IoT", "Firebase", "Sensors"],
+    description: "A sensor-driven system for monitoring conditions and supporting flood awareness.",
+    image: heroImage,
+    path: "/projects",
+    overlay: "from-blue-950/85 via-ink/45 to-ink/85",
+    featured: true,
+  },
+  {
+    title: "More Projects",
+    path: "/projects",
+    isMore: true,
+  },
+];
